@@ -23,32 +23,52 @@ Things you may want to cover:
 
 * ...
 
-user
+
+## userテーブル
+
 |column|type|options|
 |------|----|-------|
-|email|varchar|null: false|
-|passward|varchar|null: false|
-|nickname|varchar|null: false|
+|name|integer|null: false, foreign_key: true|
+|email|integer|null: false, foreign_key: true|
+|passward|integer|null: false, foreign_key: true|
 
+### Association
 has_many :tweets
 has_many :commetns
 
-tweets
+
+## commentsテーブル
 |column|type|options|
 |------|----|-------|
-|user_id|varchar|null :fail|
-|text|varchar|null :fail|
+|user_id|integer|null :fail, foreign_key: true|
+|text|integer|null :fail, foreign_key: true|
 |image|long_binary||
+|day|date||
 
+### Association
 belongs_to :user
+has_many :groups
+
+
+## groupsテーブル
+|column|type|options|
+|------|----|-------|
+|group_id|integer|null: false, foreign_key: true|
+|group_name|integer|null: false, foreign_key: true|
+|menber_id|integer|null: false, foreign_key: true|
+
+### Asociation
+belong_to :groups_users
 has_many :comments
 
-comments
+
+## groups_usersテーブル
 |column|type|options|
 |------|----|-------|
-|user_id|varchar|null :fail|
-|text|varchar|null :fail|
-|tweet_id|varchar|null :fail|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-belongs_to :user
-belongs_to :tweet
+### Association
+- belongs_to :group
+- belongs_to :user
+
