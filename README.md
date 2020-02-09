@@ -22,3 +22,33 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+user
+|column|type|options|
+|------|----|-------|
+|email|varchar|null: false|
+|passward|varchar|null: false|
+|nickname|varchar|null: false|
+
+has_many :tweets
+has_many :commetns
+
+tweets
+|column|type|options|
+|------|----|-------|
+|user_id|varchar|null :fail|
+|text|varchar|null :fail|
+|image|long_binary||
+
+belongs_to :user
+has_many :comments
+
+comments
+|column|type|options|
+|------|----|-------|
+|user_id|varchar|null :fail|
+|text|varchar|null :fail|
+|tweet_id|varchar|null :fail|
+
+belongs_to :user
+belongs_to :tweet
