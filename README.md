@@ -23,52 +23,51 @@ Things you may want to cover:
 
 * ...
 
+# chat-space DB設計
 
-## userテーブル
+## usersテーブル
 
 |column|type|options|
 |------|----|-------|
-|name|integer|null: false, foreign_key: true|
-|email|integer|null: false, foreign_key: true|
-|passward|integer|null: false, foreign_key: true|
+|name|integer|null: false|
+|email|integer|null: false|
+|passward|integer|null: false|
 
 ### Association
+has_many :groups_users
 has_many :tweets
-has_many :commetns
-
-
-## commentsテーブル
-|column|type|options|
-|------|----|-------|
-|user_id|integer|null :fail, foreign_key: true|
-|text|integer|null :fail, foreign_key: true|
-|image|long_binary||
-|day|date||
-
-### Association
-belongs_to :user
-has_many :groups
-
-
-## groupsテーブル
-|column|type|options|
-|------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
-|group_name|integer|null: false, foreign_key: true|
-|menber_id|integer|null: false, foreign_key: true|
-
-### Asociation
-belong_to :groups_users
-has_many :comments
 
 
 ## groups_usersテーブル
 |column|type|options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false|
+|group_id|integer|null: false|
 
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+## groupsテーブル
+|column|type|options|
+|------|----|-------|
+|group_name|integer|null: false|
+|menber_user_id|integer|null: false|
+
+### Asociation
+has_many :groups_users
+has_many :tweets
+
+## tweetsテーブル
+|column|type|options|
+|------|----|-------|
+|text|integer|null :fail|
+|image|long_binary||
+|day|date||
+|user_id|integer|null :fail|
+|group_id|integer|null :fail|
+
+### Association
+belongs_to :user
+belongs_to :group
 
