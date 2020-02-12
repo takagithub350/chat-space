@@ -34,8 +34,8 @@ Things you may want to cover:
 |passward|integer|null: false|
 
 ### Association
-has_many :groups_users
-has_many :tweets
+- has_many :groups_users
+- has_many :tweets
 
 
 ## groups_usersテーブル
@@ -55,8 +55,8 @@ has_many :tweets
 |menber_user_id|integer|null: false|
 
 ### Asociation
-has_many :groups_users
-has_many :tweets
+- has_many :groups_users
+- has_many :tweets
 
 ## tweetsテーブル
 |column|type|options|
@@ -68,6 +68,6 @@ has_many :tweets
 |group_id|integer|null :fail|
 
 ### Association
-belongs_to :user
-belongs_to :group
+- belongs_to :user
+- belongs_to :group
 
