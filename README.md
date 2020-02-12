@@ -35,14 +35,14 @@ Things you may want to cover:
 
 ### Association
 - has_many :groups_users
-- has_many :tweets
+- has_many :messages
 
 
 ## groups_usersテーブル
 |column|type|options|
 |------|----|-------|
-|user_id|integer|null: false|
-|group_id|integer|null: false|
+|user_id|integer|null: false,foreign_key: true|
+|group_id|integer|null: false,foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -56,14 +56,13 @@ Things you may want to cover:
 
 ### Asociation
 - has_many :groups_users
-- has_many :tweets
+- has_many :messages
 
-## tweetsテーブル
+## messageテーブル
 |column|type|options|
 |------|----|-------|
-|text|integer|null :fail|
-|image|long_binary||
-|day|date||
+|body|text|null :fail|
+|image|string||
 |user_id|integer|null :fail|
 |group_id|integer|null :fail|
 
