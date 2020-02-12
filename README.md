@@ -51,8 +51,7 @@ Things you may want to cover:
 ## groupsテーブル
 |column|type|options|
 |------|----|-------|
-|group_name|integer|null: false|
-|menber_user_id|integer|null: false|
+|name|string|null: false|
 
 ### Asociation
 - has_many :users, , through: :groups_users
@@ -61,10 +60,10 @@ Things you may want to cover:
 ## messageテーブル
 |column|type|options|
 |------|----|-------|
-|body|text|null :fail|
+|body|text||
 |image|string||
-|user_id|integer|null :fail|
-|group_id|integer|null :fail|
+|user_id|integer|null :false|
+|group_id|integer|null :false|
 
 ### Association
 - belongs_to :user
