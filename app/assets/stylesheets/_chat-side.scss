@@ -29,22 +29,28 @@
     }
   }
 
-  &__group-list{
+  &__groups-list{
     height: calc(100vh - 100px);
     background-color: #2f3e51;
 
-    .title__box{
-      height: 50px;
-      font-size: 15px;
-      margin: auto;
-      padding: 20px 20px 5px 20px;
-    }
+    .group{
+      a{
+        text-decoration: none;
+      }
+      
+      .group__name{
+        height: 50px;
+        font-size: 15px;
+        margin: auto;
+        padding: 20px 20px 5px 20px;
+      }
 
-    .message__box{
-      height: 50px;
-      font-size: 15px;
-      margin: auto;
-      padding: 20px 20px 5px 20px;
+      .group__message{
+        height: 50px;
+        font-size: 15px;
+        margin: auto;
+        padding: 20px 20px 5px 20px;
+      }
     }
   }
 }
