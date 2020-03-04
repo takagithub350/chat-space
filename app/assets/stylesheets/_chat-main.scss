@@ -86,20 +86,28 @@
 
       .new_message{
         display: flex;
-
+        box-sizing: border-box;
+        
         .form__message{
           background-color: white;
           height: 50px;
-          width: 100%;
+          width: calc(100% - 100px);
           position: relative;
           font-size: 14px;
           padding-left: 10px;
           
+          position: relative;
+        }
+
+        .hidden {
+          display: none;
+
         }
 
         .chat-main__message-form__box__icon{
           position: absolute;
-          
+          right: 160px;
+          bottom: 35px;
         }
         
         .form__submit{
