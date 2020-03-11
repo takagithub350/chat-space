@@ -1,6 +1,7 @@
 
 .wrapper{
   display: flex;
+  box-sizing: border-box;
 }
 .side-bar{
   background-color: #253141;
@@ -33,10 +34,11 @@
   &__groups-list{
     height: calc(100vh - 100px);
     background-color: #2f3e51;
-
+    
     .group{
       a{
         text-decoration: none;
+        color: #ffffff;
       }
       
       .group__name{
