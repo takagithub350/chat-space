@@ -24,7 +24,6 @@
     
     &__edit-btn{
       border: solid 1px #38aef0;
-      color: #38aef0;
       height: 40px;
       width: 72px;
       text-align: center;
@@ -32,6 +31,7 @@
       text-decoration: none;  
       a{
         text-decoration: none;
+        color: #38aef0;
       }
 
     }
@@ -50,7 +50,7 @@
   &__message-list{
     height: calc(100vh - 190px);
     background-color: #fafafa;
-    
+    overflow: scroll;
     &__box{
       padding: 35px 0 46px 40px;
 
