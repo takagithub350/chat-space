@@ -3,42 +3,43 @@ $(function(){
   var buildHTML = function(message) {
 
     var template = 
-  `<div class="chat-main__message-list__box__list">` +
-    `<div class="chat-main__message-list__box__list__name">` +
-      message.user_name +
-    `</div>` +
-    `<div class="chat-main__message-list__box__list__time">` +
-      message.created_at +
-    `</div>` +
-  `</div>`
+  `<div class="chat-main__message-list__box__list">
+    <div class="chat-main__message-list__box__list__name">
+      ${message.user_name}
+    </div>
+    <div class="chat-main__message-list__box__list__time">
+      ${message.created_at}
+    </div>
+  </div>`
 
     if (message.content && message.image) {
-      var html = `<div class="message" data-message-id=` + message.id + `>` +
-        template +
-        `<div class="lower-message">` +
-          `<p class="lower-message__content">` +
-            message.content +
-          `</p>` +
-          `<img src="` + message.image + `" class="lower-message__image" >` +
-        `</div>` +
-      `</div>`
+      var html = `<div class="message" data-message-id=${message.id}>
+        ${template}
+        <div class="lower-message">
+          <p class="lower-message__content">
+            ${message.content}
+          </p>
+            <img src="${message.image}" class="lower-message__image" >
+          </div>
+        </div>`
+
     } else if (message.content) {
-      var html = `<div class="chat-main__message-list__box" data-message-id=` + message.id + `>` +
-         template +
-        `<div class="lower-message">` +
-          `<p class="lower-message__content">` +
-            message.content +
-          `</p>` +
-        `</div>` +
-      `</div>`
+      var html = `<div class="chat-main__message-list__box" data-message-id=${message.id} >
+         ${template}
+        <div class="lower-message">
+          <p class="lower-message__content">
+            ${message.content}
+          </p>
+        </div>
+      </div>`
 
     } else if (message.image) {
-      var html = `<div class="chat-main__message-list__box" data-message-id=` + message.id + `>` +
-        template +
-        `<div class="lower-message">` +
-          `<img src="` + message.image + `" class="lower-message__image" >` +
-        `</div>` +
-      `</div>`
+      var html = `<div class="chat-main__message-list__box" data-message-id=${message.id} >
+        ${template}
+        <div class="lower-message"> 
+          <img src="${message.image}" class="lower-message__image"
+        </div>
+      </div>`
     };
     return html;
   };
