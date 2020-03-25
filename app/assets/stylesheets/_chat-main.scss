@@ -51,10 +51,10 @@
     height: calc(100vh - 190px);
     background-color: #fafafa;
     overflow: scroll;
-    &__box{
+    .message{
       padding: 35px 0 46px 40px;
 
-      &__list{
+      .chat-main__message-list__box__list{
         display: flex;
         margin-bottom: 12px;
         

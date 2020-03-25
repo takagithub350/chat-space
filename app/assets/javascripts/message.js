@@ -1,5 +1,6 @@
 $(function(){
-  
+
+
   var buildHTML = function(message) {
 
     var template = 
@@ -24,7 +25,7 @@ $(function(){
         </div>`
 
     } else if (message.content) {
-      var html = `<div class="chat-main__message-list__box" data-message-id=${message.id} >
+      var html = `<div class="message" data-message-id=${message.id} >
          ${template}
         <div class="lower-message">
           <p class="lower-message__content">
@@ -34,7 +35,7 @@ $(function(){
       </div>`
 
     } else if (message.image) {
-      var html = `<div class="chat-main__message-list__box" data-message-id=${message.id} >
+      var html = `<div class="message" data-message-id=${message.id} >
         ${template}
         <div class="lower-message"> 
           <img src="${message.image}" class="lower-message__image"
